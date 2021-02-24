@@ -1,5 +1,8 @@
 # Covert
 
+[![CircleCI](https://circleci.com/gh/merqloveu/covert.svg?style=svg)](https://circleci.com/gh/merqloveu/covert)
+[![Gem Version](https://badge.fury.io/rb/covert.svg)](https://badge.fury.io/rb/covert)
+
 Covert makes your string securely obfuscated.
 
 ## Installation
