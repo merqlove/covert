@@ -28,6 +28,8 @@ Or install it yourself as:
 Covert.configure do |config|
   config.cipher_key = 'blah!'
   config.cipher = 'AES-256-CBC' # default
+  config.hmac_key = 'blah!'
+  config.hmac_digest = 'SHA256' # default
 end
 ```
 
@@ -39,6 +41,11 @@ Covert.obfuscate('mystring') #=> "7hSfzDwp2JXZcieFpGCndA=="
 ### Unobfuscation
 ```ruby
 Covert.unobfuscate('7hSfzDwp2JXZcieFpGCndA==') #=> "mystring"
+```
+
+### Hmac
+```ruby
+Covert.hmac('hmac') #=> "13ca4d5b9cdc1485834a05d926913d919d3c83de29c99314a7dbccafdc8be8ac"
 ```
 
 ## Benchmark

@@ -9,6 +9,7 @@ module Covert
   class Error < StandardError; end
 
   autoload :Config, 'covert/config.rb'
+  autoload :Hmac, 'covert/hmac.rb'
   autoload :Obfuscation, 'covert/obfuscation.rb'
   autoload :Obfuscate, 'covert/obfuscate.rb'
   autoload :Unobfuscate, 'covert/unobfuscate.rb'
@@ -29,6 +30,14 @@ module Covert
     def configure
       yield(config)
     end
+  end
+
+  # @param [String] str String for HMAC encoding
+  # @example Generate HMAC code
+  #   Covert.hmac("mystring") #=> "cddb0db23f469c8bf072b21fd837149bd6ace9ab771cceef14c9e517cc93282e"
+  # @return [String] HMAC encoded string
+  def self.hmac(str)
+    Hmac.call(value: str)
   end
 
   # @param [String] str String to obfuscate

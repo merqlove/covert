@@ -5,6 +5,10 @@ class CovertTest < Minitest::Test
     refute_nil ::Covert::VERSION
   end
 
+  def test_hmac
+    assert_equal Covert.hmac('hmac'), '13ca4d5b9cdc1485834a05d926913d919d3c83de29c99314a7dbccafdc8be8ac'
+  end
+
   def test_obfuscate
     assert_equal Covert.obfuscate('mystring'), '7hSfzDwp2JXZcieFpGCndA=='
   end
